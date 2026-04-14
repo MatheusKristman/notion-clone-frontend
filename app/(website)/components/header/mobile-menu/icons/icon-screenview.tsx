@@ -1,0 +1,31 @@
+interface IIconScreenview {
+    color: string;
+}
+
+export const IconScreenview = ({ color }: IIconScreenview) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="graphics-symbol"
+            viewBox="0 0 20 20"
+            className="rectangleOnRectangleWide"
+            style={{
+                width: "22px",
+                height: "22px",
+                display: "block",
+                fill: "currentColor",
+                flexShrink: "0",
+            }}
+        >
+            <path
+                fill={`rgb(${color})`}
+                d="M15.5 8.875c1.174 0 2.125.951 2.125 2.125v5a2.125 2.125 0 0 1-2.125 2.125H12A2.125 2.125 0 0 1 9.875 16v-5c0-1.174.951-2.125 2.125-2.125zm-3.5 1.25a.875.875 0 0 0-.875.875v5c0 .483.392.875.875.875h3.5a.875.875 0 0 0 .875-.875v-5a.875.875 0 0 0-.875-.875z"
+            />
+            <path
+                fill={`rgb(${color})`}
+                d="M15.5 3.625c1.174 0 2.125.951 2.125 2.125v2.63a3.4 3.4 0 0 0-1.25-.64V5.75a.875.875 0 0 0-.875-.875h-11a.875.875 0 0 0-.875.875v7.5c0 .483.392.875.875.875h4.125v1.25H4.5a2.125 2.125 0 0 1-2.125-2.125v-7.5c0-1.174.951-2.125 2.125-2.125z"
+            />
+        </svg>
+    );
+};

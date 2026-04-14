@@ -8,7 +8,7 @@ interface INavItem {
     isNew: boolean;
 }
 
-export const NavItem = ({ color, desc, icon, isNew, title }: INavItem) => {
+export const NavWithIconItem = ({ color, desc, icon, isNew, title }: INavItem) => {
     return (
         <div className="w-full flex items-center gap-2">
             <div
@@ -23,7 +23,9 @@ export const NavItem = ({ color, desc, icon, isNew, title }: INavItem) => {
             <div className="flex flex-col">
                 <div className="flex items-end gap-1">
                     <span className="text-sm font-medium">{title}</span>
-                    {isNew && <span className="bg-blue-200 text-blue-600 rounded-full px-1 py-0.5">Novo</span>}
+                    {isNew && (
+                        <span className="bg-primary/10 text-primary rounded-full px-1.5 text-xs font-medium">Novo</span>
+                    )}
                 </div>
                 <span className="text-xs text-muted-foreground font-medium">{desc}</span>
             </div>

@@ -1,0 +1,28 @@
+interface IIconLock {
+    color: string;
+}
+
+export const IconLock = ({ color }: IIconLock) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="graphics-symbol"
+            viewBox="0 0 20 20"
+            className="lock"
+            style={{
+                width: "22px",
+                height: "22px",
+                display: "block",
+                fill: "currentColor",
+                flexShrink: "0",
+            }}
+        >
+            <path fill={`rgb(${color})`} d="M10.55 12.808a1.35 1.35 0 1 0-1.1 0v1.242a.55.55 0 0 0 1.1 0z" />
+            <path
+                fill={`rgb(${color})`}
+                d="M10 1.95a4 4 0 0 0-4 4v1.433a2.426 2.426 0 0 0-2.025 2.392v5.4A2.425 2.425 0 0 0 6.4 17.6h7.2a2.425 2.425 0 0 0 2.425-2.425v-5.4A2.426 2.426 0 0 0 14 7.383V5.95a4 4 0 0 0-4-4m2.75 5.4h-5.5v-1.4a2.75 2.75 0 0 1 5.5 0zM5.225 9.775c0-.649.526-1.175 1.175-1.175h7.2c.649 0 1.175.526 1.175 1.175v5.4c0 .649-.526 1.175-1.175 1.175H6.4a1.175 1.175 0 0 1-1.175-1.175z"
+            />
+        </svg>
+    );
+};
