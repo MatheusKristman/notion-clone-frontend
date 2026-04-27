@@ -16,7 +16,7 @@ export const ProductDropdownMenu = () => {
                 <ChevronDownIcon />
             </Button>
 
-            <div className="max-w-200 w-full bg-white absolute top-16 left-1/2 -translate-x-1/2 rounded-2xl p-4 shadow-md">
+            <div className="max-w-200 w-full bg-white absolute top-20 left-1/2 -translate-x-1/2 rounded-2xl p-4 shadow-md">
                 <div className="rounded-xl bg-muted p-4 flex items-center justify-between gap-4 mb-6">
                     <div className="flex items-center gap-4">
                         <div className="size-20 rounded-lg bg-white flex items-center justify-center">
