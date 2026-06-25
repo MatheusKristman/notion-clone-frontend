@@ -1,22 +1,46 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
+import { useRef, useState } from "react";
 import { ArrowRightIcon, ChevronDownIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+
+import { projectsMenuItems } from "@/app/constants/projects-menu-items";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { projectsMenuItems } from "@/app/constants/projects-menu-items";
 import { ProductNavItem } from "./product-dropdown-menu/product-nav-item";
-import Link from "next/link";
 
 export const ProductDropdownMenu = () => {
-  return (
-    <>
-      <Button variant="ghost" className="font-semibold rounded-sm">
-        Produto
-        <ChevronDownIcon />
-      </Button>
+  const [show, setShow] = useState(false);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-      <div className="max-w-200 w-full bg-white absolute top-20 left-1/2 -translate-x-1/2 rounded-2xl p-4 shadow-md">
+  const openMenu = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setShow(true);
+  };
+
+  const closeMenu = () => {
+    closeTimeoutRef.current = setTimeout(() => setShow(false), 200);
+  };
+
+  return (
+    <motion.div
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
+      initial={{ y: -25, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -25, opacity: 0 }}
+      transition={{
+        duration: 0.2,
+        ease: "easeOut",
+      }}
+      className="max-w-200 w-full absolute top-[64px] left-1/2 -translate-x-1/2 pt-4"
+    >
+      <div className="w-full bg-white rounded-2xl p-4 shadow-md">
         <div className="rounded-xl bg-muted p-4 flex items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">
             <div className="size-20 rounded-lg bg-white flex items-center justify-center">
@@ -81,6 +105,6 @@ export const ProductDropdownMenu = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
