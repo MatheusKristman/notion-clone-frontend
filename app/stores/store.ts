@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 interface HeaderState {
-    isOpen: boolean;
-    handleOpen: () => void;
+  isOpen: boolean;
+  handleOpen: () => void;
 }
 
 export const useHeaderStore = create<HeaderState>((set) => ({
-    isOpen: false,
-    handleOpen: () => set((state) => ({ isOpen: !state.isOpen })),
+  isOpen: false,
+  handleOpen: () => set((state) => ({ isOpen: !state.isOpen })),
 }));

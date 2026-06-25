@@ -1,7 +1,7 @@
 export type navMenuWithoutIconType = {
+  title: string;
+  items: {
     title: string;
-    items: {
-        title: string;
-        link: string;
-    }[];
+    link: string;
+  }[];
 }[];
