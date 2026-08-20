@@ -1,14 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
+import Link from "next/link";
 
-import { AINavItem } from "./ai-dropdown-menu/ai-nav-item";
-import { aiMenuItems } from "@/app/constants/ai-menu-items";
-
-export const AIDropdownMenu = () => {
-  const [show, setShow] = useState(false);
+export const SolutionsDropdownMenu = () => {
+  const [show, setShow] = useState(true);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openMenu = () => {
@@ -34,20 +30,26 @@ export const AIDropdownMenu = () => {
         duration: 0.2,
         ease: "easeOut",
       }}
-      className="max-w-200 w-full absolute top-[64px] left-1/2 -translate-x-1/2 pt-4"
+      className="max-w-200 w-full absolute top-16 left-1/2 -translate-x-1/2 pt-4"
     >
       <div className="w-full bg-white rounded-2xl p-4 shadow-md grid grid-cols-3 gap-6">
-        <div className="size-60 flex items-center justify-center h-full">
-          <Image src="/nav-menu/ai_group.png" alt="AI" width={192} height={161} />
+        <div className="w-full flex flex-col gap-2">
+          <h4 className="text-muted-foreground text-xs font-medium">Equipes</h4>
+
+          <div className="w-full flex flex-col text-2xl font-bold *:hover:bg-muted *:rounded-md *:py-0.5 *:px-2">
+            <Link href="#">Engenharia e Produto</Link>
+            <Link href="#">Design</Link>
+            <Link href="#">Marketing TI</Link>
+          </div>
         </div>
 
         <div className="w-full flex flex-col gap-3">
           <span className="text-muted-foreground text-xs font-medium">Recursos de IA</span>
 
           <div className="w-full flex flex-col">
-            {aiMenuItems.map((item) => (
+            {/* {aiMenuItems.map((item) => (
               <AINavItem key={item.title} color={item.color} icon={item.icon} title={item.title} desc={item.desc} />
-            ))}
+            ))} */}
           </div>
         </div>
 

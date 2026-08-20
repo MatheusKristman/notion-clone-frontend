@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { AIDropdownMenu } from "./header/header-nav/ai-dropdown-menu";
 import { ProductDropdownMenu } from "./header/header-nav/product-dropdown-menu";
 import { AnimatePresence } from "motion/react";
+import { SolutionsDropdownMenu } from "./header/header-nav/solutions-dropdown-menu";
 
 export const Header = () => {
   const { isOpen, handleOpen } = useHeaderStore();
@@ -93,6 +94,7 @@ export const Header = () => {
         <>
           {menuOpen == "product" && <ProductDropdownMenu key="product-dropdown-menu" />}
           {menuOpen == "ai" && <AIDropdownMenu key="ai-dropdown-menu" />}
+          {true && <SolutionsDropdownMenu />}
         </>
       </AnimatePresence>
     </header>
